@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cqlsh
+spec:
+  selector:
+    matchLabels:
+      app: cqlsh
+  template:
+    metadata:
+      labels:
+        app: cqlsh
+    spec:
+      containers:
+      - image: jsanda/cqlsh-k8s:latest
+        name: cqlsh
+        env:
+        - name: CQLSH_HOST
+          # Change this to the name of the C* pod to which you want to
+          # connect.
+          value: cassandra
