@@ -12,7 +12,7 @@ spec:
         app: cqlsh
     spec:
       containers:
-      - image: jsanda/cqlsh-k8s:latest
+      - image: jsanda/cqlsh-k8s:b2b26a26344c
         name: cqlsh
         env:
         - name: CQLSH_HOST
